@@ -35,18 +35,11 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "$AUDIT_BIN" ]]; then
-  for candidate in \
-    "$ROOT/../audit/bin/audit" \
-    "$ROOT/../../SymPolicy/audit/bin/audit" \
-    "${HOME:-}/SymPolicy/audit/bin/audit" \
-    "${HOME:-}/audit/bin/audit"
-  do
-    if [[ -x "$candidate" ]]; then
-      AUDIT_BIN="$candidate"
-      break
-    fi
-  done
-  if [[ -z "$AUDIT_BIN" ]] && command -v audit >/dev/null 2>&1; then
+  if [[ -x "$ROOT/../audit/bin/audit" ]]; then
+    AUDIT_BIN="$ROOT/../audit/bin/audit"
+  elif [[ -x "$HOME/audit/bin/audit" ]]; then
+    AUDIT_BIN="$HOME/audit/bin/audit"
+  elif command -v audit >/dev/null 2>&1; then
     AUDIT_BIN="$(command -v audit)"
   fi
 fi
