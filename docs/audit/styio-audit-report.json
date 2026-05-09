@@ -2,7 +2,7 @@
   "findings": [],
   "framework": {
     "name": "audit",
-    "root": "$HOME/audit",
+    "root": "<audit-root>",
     "version": "0.1.0"
   },
   "modules": [
@@ -37,6 +37,6 @@
   "target": {
     "framework_only": false,
     "project": "styio-platform",
-    "repo_root": "$HOME/styio-platform"
+    "repo_root": "<repo-root>"
   }
 }

@@ -39,8 +39,6 @@ if [[ -z "$AUDIT_BIN" ]]; then
     AUDIT_BIN="$ROOT/../audit/bin/audit"
   elif [[ -x "$HOME/SymPolicy/audit/bin/audit" ]]; then
     AUDIT_BIN="$HOME/SymPolicy/audit/bin/audit"
-  elif [[ -x "$HOME/audit/bin/audit" ]]; then
-    AUDIT_BIN="$HOME/audit/bin/audit"
   elif command -v audit >/dev/null 2>&1; then
     AUDIT_BIN="$(command -v audit)"
   fi
